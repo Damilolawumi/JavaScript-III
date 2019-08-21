@@ -36,7 +36,39 @@ const myName = {
 // Principle 3
 
 // code example for New Binding
+function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+    var Car1 = new Car('Toyota', 'Camry', 2014);
+    console.log(Car1);
+
 
 // Principle 4
 
 // code example for Explicit Binding
+function Person(attributes) {
+    this.age = attributes.age;
+    this.name = attributes.name;
+    this.homeTown = attributes.homeTown;
+    this.speak = function () {
+      return `Hello, my name is ${this.name}`;
+    };
+  }
+
+  let dami = {
+      name: 'Dami',
+      age:900
+  }
+
+
+  let tobe = new Person({
+      name:'Tobechukwu',
+      age:40,
+      homeTown:'Owerri'
+  })
+
+  console.log(tobe.speak.apply(dami))
+
+
